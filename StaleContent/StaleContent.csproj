@@ -83,6 +83,7 @@
     <Compile Include="Utilities\SettingsUtil.cs" />
     <Compile Include="Pipelines\PublishItem\SetRefreshedDates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\TemplateUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\local.pubxml" />
