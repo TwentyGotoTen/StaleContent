@@ -81,6 +81,7 @@
     <Compile Include="Pipelines\RefreshItem\TemplateCheck.cs" />
     <Compile Include="Utilities\ConfigUtil.cs" />
     <Compile Include="Utilities\FreshnessUtil.cs" />
+    <Compile Include="Utilities\RefreshUtil.cs" />
     <Compile Include="Utilities\SettingsUtil.cs" />
     <Compile Include="Pipelines\PublishItem\SetRefreshedDates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

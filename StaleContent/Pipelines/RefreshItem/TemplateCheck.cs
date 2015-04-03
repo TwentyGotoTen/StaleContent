@@ -13,20 +13,10 @@ namespace StaleContent.Pipelines.RefreshItem
             if (args == null || args.Item == null)
                 return;
 
-            if(TemplateUtil.IncludedTemplates.Any())
+            if (!TemplateUtil.TemplateIsValid(args.Item))
             {
-                if(!TemplateUtil.IncludedTemplates.Contains(args.Item.TemplateID))
-                {
-                    args.AbortPipeline(); 
-                }
-            }
-            else if(TemplateUtil.ExcludedTemplates.Any())
-            {
-                if(TemplateUtil.ExcludedTemplates.Contains(args.Item.TemplateID))
-                {
-                     args.AbortPipeline(); 
-                }
-            }               
+                  args.AbortPipeline(); 
+            }       
         }
     }
 }
