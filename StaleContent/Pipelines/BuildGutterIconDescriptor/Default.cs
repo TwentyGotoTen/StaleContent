@@ -1,4 +1,5 @@
-﻿using Sitecore.Data.Items;
+﻿using Sitecore;
+using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Globalization;
 using StaleContent.Utilities;
@@ -17,22 +18,15 @@ namespace StaleContent.Pipelines.BuildGutterIconDescriptor
             Assert.IsNotNull(args.Descriptor, "args.Descriptor");
 
             args.Descriptor.Icon = SettingsUtil.GutterIconPath;
-            args.Descriptor.Tooltip = GetTooltip();
-            args.Descriptor.Click = GetCommandString(args.Item);
+            args.Descriptor.Tooltip = GetTooltip(args);
+            args.Descriptor.Click = Constants.Commands.Refresh;
         }
 
-        private String GetTooltip()
+        private String GetTooltip(BuildGutterIconDescriptorArgs args)
         {
             String format = Translate.Text(SettingsUtil.IsStaleGutterTooltipDictionaryKey);
-            String freshnessPeriod = SettingsUtil.FreshnessPeriod.ToString();
-            return String.Format(format, freshnessPeriod);
-        }
-
-        private String GetCommandString(Item item)
-        {
-            String format = "stalecontent:refresh(id={0})";
-            String id = item.ID.ToString();
-            return String.Format(format, id);
+            String date = DateUtil.IsoDateToDateTime(args.Item[Constants.StatisticsFields.Refreshed]).ToShortDateString();
+            return String.Format(format, date);
         }
     }
 }

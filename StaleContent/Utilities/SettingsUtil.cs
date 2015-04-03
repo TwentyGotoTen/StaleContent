@@ -41,6 +41,30 @@ namespace StaleContent.Utilities
             {
                 return Settings.GetSetting("StaleContent.IsStaleGutterTooltipDictionaryKey", "StaleContent.IsStaleGutterTooltip");
             }
-        }        
+        }
+
+        public static String ContentEditorWarningTitleDictionaryKey
+        {
+            get
+            {
+                return Settings.GetSetting("StaleContent.ContentEditorWarningTitleDictionaryKey", "StaleContent.ContentEditorWarningTitle");
+            }
+        }
+
+        public static String ContentEditorWarningTextDictionaryKey
+        {
+            get
+            {
+                return Settings.GetSetting("StaleContent.ContentEditorWarningTextDictionaryKey", "StaleContent.ContentEditorWarningText");
+            }
+        }
+
+        public static String ContentEditorWarningRefreshOptionDictionaryKey
+        {
+            get
+            {
+                return Settings.GetSetting("StaleContent.ContentEditorWarningRefreshOptionDictionaryKey", "StaleContent.ContentEditorRefreshOption");
+            }
+        }
     }
 }
