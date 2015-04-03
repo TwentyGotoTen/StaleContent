@@ -15,7 +15,7 @@ namespace StaleContent.Utilities
         {
             get
             {
-                return GetIDsFromConfig("staleContentTemplates/includeTemplates/*");
+                return ConfigUtil.GetTemplateIDs("includeTemplates/*");
             }
         }
 
@@ -23,26 +23,8 @@ namespace StaleContent.Utilities
         {
             get
             {
-                return GetIDsFromConfig("staleContentTemplates/excludeTemplates/*");
+                return ConfigUtil.GetTemplateIDs("excludeTemplates/*");
             }
-        }
-
-        public static List<ID> GetIDsFromConfig(string path)
-        {
-            List<ID> lst = new List<ID>();
-            foreach (XmlNode node in Factory.GetConfigNodes(path))
-            {
-                if (!string.IsNullOrWhiteSpace(node.Value))
-                {
-                    ID id = null;
-                    if (ID.TryParse(node.Value, out id))
-                    {
-                        lst.Add(id);
-                    }
-
-                }
-            }
-            return lst;
         }
     }
 }
