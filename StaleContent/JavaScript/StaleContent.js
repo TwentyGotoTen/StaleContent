@@ -7,7 +7,7 @@
 define(["sitecore", "entityService"], function (Sitecore, entityService) {
     var StaleContent = Sitecore.Definitions.App.extend({
         initialized: function () {
-            this.GetStaleContent();
+           // this.GetStaleContent();
         },
 
         EntityServiceConfig: function () {
