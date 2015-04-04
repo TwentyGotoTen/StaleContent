@@ -129,11 +129,14 @@
     <Compile Include="Constants\Indexes.cs" />
     <Compile Include="Constants\StatisticsFields.cs" />
     <Compile Include="Controllers\StaleContentController.cs" />
+    <Compile Include="Entities\StaleContent.cs" />
+    <Compile Include="Controllers\StaleContentController.cs" />
     <Compile Include="DataAccess\ContentSearcher.cs" />
     <Compile Include="DataAccess\IContentSearcher.cs" />
     <Compile Include="Entities\SearchItem.cs" />
     <Compile Include="Entities\StaleContentItem.cs" />
     <Compile Include="Gutters\IsStale.cs" />
+    <Compile Include="IoC\IoCRegistry.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorArgs.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorProcessor.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\Default.cs" />
@@ -144,7 +147,6 @@
     <Compile Include="Pipelines\RefreshItem\RefreshItemProcessor.cs" />
     <Compile Include="Pipelines\RefreshItem\TemplateCheck.cs" />
     <Compile Include="Repositories\StaleContentRepository.cs" />
-    <Compile Include="Utilities\ConfigUtil.cs" />
     <Compile Include="Utilities\FreshnessUtil.cs" />
     <Compile Include="Utilities\RefreshUtil.cs" />
     <Compile Include="Utilities\SettingsUtil.cs" />
@@ -164,10 +166,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Entities\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
