@@ -6,7 +6,7 @@ using StructureMap;
 namespace StaleContent.Controllers
 {
     [ServicesController]
-    public class StaleContentController : EntityService<Entities.StaleContent>
+    public class StaleContentController : EntityService<Entities.StaleContentItem>
     {
         private Container _container;
 
@@ -18,13 +18,13 @@ namespace StaleContent.Controllers
             }
         }
 
-        public StaleContentController(IRepository<Entities.StaleContent> repository)
+        public StaleContentController(IRepository<Entities.StaleContentItem> repository)
             : base(repository)
         {
         }
 
         public StaleContentController()
-            : this(Container.GetInstance<IRepository<Entities.StaleContent>>())
+            : this(Container.GetInstance<IRepository<Entities.StaleContentItem>>())
         {
         }
     }
