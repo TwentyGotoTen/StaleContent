@@ -105,7 +105,7 @@
     <Compile Include="Commands\Refresh.cs" />
     <Compile Include="Constants\StatisticsFields.cs" />
     <Compile Include="Controllers\StaleContentController.cs" />
-    <Compile Include="Entities\StaleContent.cs" />
+    <Compile Include="Entities\StaleContentItem.cs" />
     <Compile Include="Gutters\IsStale.cs" />
     <Compile Include="IoC\IoCRegistry.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorArgs.cs" />
