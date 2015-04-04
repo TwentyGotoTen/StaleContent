@@ -104,7 +104,10 @@
   <ItemGroup>
     <Compile Include="Commands\Refresh.cs" />
     <Compile Include="Constants\StatisticsFields.cs" />
+    <Compile Include="Controllers\StaleContentController.cs" />
+    <Compile Include="Entities\StaleContent.cs" />
     <Compile Include="Gutters\IsStale.cs" />
+    <Compile Include="IoC\IoCRegistry.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorArgs.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorProcessor.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\Default.cs" />
@@ -113,6 +116,7 @@
     <Compile Include="Pipelines\RefreshItem\RefreshItemArgs.cs" />
     <Compile Include="Pipelines\RefreshItem\RefreshItemProcessor.cs" />
     <Compile Include="Pipelines\RefreshItem\TemplateCheck.cs" />
+    <Compile Include="Repositories\StaleContentRepository.cs" />
     <Compile Include="Utilities\FreshnessUtil.cs" />
     <Compile Include="Utilities\SettingsUtil.cs" />
     <Compile Include="Pipelines\PublishItem\SetRefreshedDates.cs" />
@@ -130,10 +134,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Entities\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
