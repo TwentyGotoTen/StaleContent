@@ -2,6 +2,7 @@
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using StaleContent.Constants;
+using StaleContent.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +17,10 @@ namespace StaleContent.Pipelines.RefreshItem
             Assert.ArgumentNotNull(args, "args");
             Assert.IsNotNull(args.Item, "args.Item");
 
-            if (args.FreshnessPeriod <= 0)
-                return;
+            Assert.ArgumentNotNull(args, "args");
+            Assert.IsNotNull(args.Item, "args.Item");
 
-            DateTime expiryDate = DateTime.Now.Date.AddDays(args.FreshnessPeriod);
-            String isoExpiryDate = DateUtil.ToIsoDate(expiryDate);
-            String isoNow = DateUtil.ToIsoDate(DateTime.Now.Date);
-
-            using (new Sitecore.SecurityModel.SecurityDisabler())
-            {
-                using (new EditContext(args.Item, false, false))
-                {                  
-                    args.Item[StatisticsFields.FreshnessExpiry] = isoExpiryDate;
-                    args.Item[StatisticsFields.Refreshed] = isoNow;
-                }
-            }
+            RefreshUtil.RefreshItem(args.FreshnessPeriod, args.Item);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Sitecore.Configuration;
 using Sitecore.Data;
+using Sitecore.Data.Items;
 using Sitecore.Xml;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace StaleContent.Utilities
         {
             get
             {
-                return GetIDsFromConfig("staleContentTemplates/includeTemplates/*");
+                return ConfigUtil.GetTemplateIDs("includeTemplates/*");
             }
         }
 
@@ -23,26 +24,27 @@ namespace StaleContent.Utilities
         {
             get
             {
-                return GetIDsFromConfig("staleContentTemplates/excludeTemplates/*");
+                return ConfigUtil.GetTemplateIDs("excludeTemplates/*");
             }
         }
 
-        public static List<ID> GetIDsFromConfig(string path)
+        public static bool TemplateIsValid(Item item)
         {
-            List<ID> lst = new List<ID>();
-            foreach (XmlNode node in Factory.GetConfigNodes(path))
+            if (TemplateUtil.IncludedTemplates.Any())
             {
-                if (!string.IsNullOrWhiteSpace(node.Value))
+                if (!TemplateUtil.IncludedTemplates.Contains(item.TemplateID))
                 {
-                    ID id = null;
-                    if (ID.TryParse(node.Value, out id))
-                    {
-                        lst.Add(id);
-                    }
-
+                    return  false;
                 }
             }
-            return lst;
+            else if (TemplateUtil.ExcludedTemplates.Any())
+            {
+                if (TemplateUtil.ExcludedTemplates.Contains(item.TemplateID))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

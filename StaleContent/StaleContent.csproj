@@ -39,11 +39,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Sitecore.Client">
-      <HintPath>..\..\..\inetpub\wwwroot\sc8\Website\bin\Sitecore.Client.dll</HintPath>
+    <Reference Include="Sitecore.Client, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\inetpub\wwwroot\sc8\Website\bin\Sitecore.Kernel.dll</HintPath>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\..\..\..\..\..\inetpub\wwwroot\iantest8\Website\bin\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -81,7 +90,9 @@
     <Compile Include="Pipelines\RefreshItem\RefreshItemArgs.cs" />
     <Compile Include="Pipelines\RefreshItem\RefreshItemProcessor.cs" />
     <Compile Include="Pipelines\RefreshItem\TemplateCheck.cs" />
+    <Compile Include="Utilities\ConfigUtil.cs" />
     <Compile Include="Utilities\FreshnessUtil.cs" />
+    <Compile Include="Utilities\RefreshUtil.cs" />
     <Compile Include="Utilities\SettingsUtil.cs" />
     <Compile Include="Pipelines\PublishItem\SetRefreshedDates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
