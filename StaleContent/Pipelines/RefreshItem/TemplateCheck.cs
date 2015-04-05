@@ -15,8 +15,8 @@ namespace StaleContent.Pipelines.RefreshItem
 
             if (!TemplateUtil.TemplateIsValid(args.Item))
             {
-                args.AbortPipeline();
-            }       
+                     args.AbortPipeline(); 
+                }
+            }               
         }
     }
-}
