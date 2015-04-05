@@ -1,18 +1,32 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using StaleContent.Interfaces;
 
 namespace StaleContent.Repositories
 {
     public class StaleContentRepository : Sitecore.Services.Core.IRepository<Entities.StaleContentItem>
     {
+        private Interfaces.IContentSearcher _iContentSearcher;
+        private Interfaces.IObjectMappers _iObjectMappers;
+
+
+        public StaleContentRepository(IContentSearcher iContentSearcher, IObjectMappers iObjectMappers)
+        {
+            _iContentSearcher = iContentSearcher;
+            _iObjectMappers = iObjectMappers;
+        }
+
+
         public IQueryable<Entities.StaleContentItem> GetAll()
         {
-            var items = new List<Entities.StaleContentItem>();
+            var expiryPredicate = _iContentSearcher.CreateExpiryPredicate();
 
-            items.Add(new Entities .StaleContentItem(){Id = "1", itemId = "1", Name="Hello"});
-            items.Add(new Entities.StaleContentItem() { Id = "2", itemId = "2", Name = "world" });
+            var searchResults = _iContentSearcher.GetItems("sitecore_master_index", expiryPredicate);
 
-            return items.AsQueryable();
+            var staleContent = _iObjectMappers.MapListToListObject<Entities.SearchItem, Entities.StaleContentItem>(searchResults);
+
+            return staleContent.AsQueryable();
+
         }
 
         public Entities.StaleContentItem FindById(string id)
