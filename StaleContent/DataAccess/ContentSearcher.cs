@@ -6,6 +6,7 @@ using Sitecore.ContentSearch.Linq.Utilities;
 using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Data;
 using StaleContent.Entities;
+using StaleContent.Interfaces;
 
 namespace StaleContent.DataAccess
 {
