@@ -1,4 +1,6 @@
-﻿using Sitecore.Shell.Applications.ContentEditor;
+﻿
+
+using System;
 
 namespace StaleContent.Entities
 {
