@@ -10,9 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sitecore Packages", "Siteco
 		Sitecore Packages\Stale Content.zip = Sitecore Packages\Stale Content.zip
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{C36C5292-1148-490C-B3DD-D105021F6AF1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{21CD5D2B-111C-4617-8FD9-F7EE779CDABF}"
 	ProjectSection(SolutionItems) = preProject
-		serialization.zip = serialization.zip
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
 Global
