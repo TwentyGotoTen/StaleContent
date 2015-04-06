@@ -211,7 +211,6 @@
     <Compile Include="Utilities\TemplateUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="JavaScript\StaleContent.js" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="web.config" />
