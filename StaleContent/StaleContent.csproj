@@ -96,6 +96,7 @@
     <Compile Include="Commands\Refresh.cs" />
     <Compile Include="Constants\Commands.cs" />
     <Compile Include="Constants\StatisticsFields.cs" />
+    <Compile Include="Controllers\StaleContentController.cs" />
     <Compile Include="Gutters\IsStale.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorArgs.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorProcessor.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Pipelines\RefreshItem\RefreshItemArgs.cs" />
     <Compile Include="Pipelines\RefreshItem\RefreshItemProcessor.cs" />
     <Compile Include="Pipelines\RefreshItem\TemplateCheck.cs" />
+    <Compile Include="Repositories\StaleContentRepository.cs" />
     <Compile Include="Utilities\ConfigUtil.cs" />
     <Compile Include="Utilities\FreshnessUtil.cs" />
     <Compile Include="Utilities\RefreshUtil.cs" />
