@@ -41,18 +41,34 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Sitecore.Client, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Sitecore.Client.dll</HintPath>
+      <HintPath>..\Lib\Sitecore.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch">
-      <HintPath>..\..\..\..\..\..\inetpub\wwwroot\iantest8\Website\bin\Sitecore.ContentSearch.dll</HintPath>
+    <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <HintPath>..\Lib\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Lucene">
+      <HintPath>..\Lib\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Client">
+      <HintPath>..\Lib\Sitecore.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Core">
+      <HintPath>..\Lib\Sitecore.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Infrastructure">
+      <HintPath>..\Lib\Sitecore.Services.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Infrastructure.Sitecore">
+      <HintPath>..\Lib\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
