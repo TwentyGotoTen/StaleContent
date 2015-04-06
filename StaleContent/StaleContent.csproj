@@ -79,6 +79,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -95,8 +99,13 @@
   <ItemGroup>
     <Compile Include="Commands\Refresh.cs" />
     <Compile Include="Constants\Commands.cs" />
+    <Compile Include="Constants\Indexes.cs" />
     <Compile Include="Constants\StatisticsFields.cs" />
     <Compile Include="Controllers\StaleContentController.cs" />
+    <Compile Include="DataAccess\ContentSearcher.cs" />
+    <Compile Include="DataAccess\IContentSearcher.cs" />
+    <Compile Include="Entities\SearchItem.cs" />
+    <Compile Include="Entities\StaleContentItem.cs" />
     <Compile Include="Gutters\IsStale.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorArgs.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorProcessor.cs" />
