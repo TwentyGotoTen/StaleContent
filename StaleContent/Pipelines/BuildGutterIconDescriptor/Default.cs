@@ -10,7 +10,7 @@ using System.Web;
 
 namespace StaleContent.Pipelines.BuildGutterIconDescriptor
 {
-    public class Default : BuildGutterIconDescriptorProcessor 
+    public class Default : BuildGutterIconDescriptorProcessor
     {
         public override void Process(BuildGutterIconDescriptorArgs args)
         {
