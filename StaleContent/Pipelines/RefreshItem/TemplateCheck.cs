@@ -6,7 +6,7 @@ using System.Web;
 
 namespace StaleContent.Pipelines.RefreshItem
 {
-    public class TemplateCheck : RefreshItemProcessor 
+    public class TemplateCheck : RefreshItemProcessor
     {
         public override void Process(RefreshItemArgs args)
         {
@@ -15,8 +15,8 @@ namespace StaleContent.Pipelines.RefreshItem
 
             if (!TemplateUtil.TemplateIsValid(args.Item))
             {
-                     args.AbortPipeline(); 
-                }
-            }               
+                args.AbortPipeline();
+            }
         }
     }
+}
