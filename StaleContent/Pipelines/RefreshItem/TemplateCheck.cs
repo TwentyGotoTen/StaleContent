@@ -15,8 +15,13 @@ namespace StaleContent.Pipelines.RefreshItem
 
             if (!TemplateUtil.TemplateIsValid(args.Item))
             {
+<<<<<<< HEAD
                 args.AbortPipeline();
             }
+=======
+                     args.AbortPipeline(); 
+                }
+            }               
+>>>>>>> TwentyGotoTen/master
         }
     }
-}

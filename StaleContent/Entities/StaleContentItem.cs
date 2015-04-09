@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿
 
 using System;
+=======
+﻿using System;
+>>>>>>> TwentyGotoTen/master
 
 namespace StaleContent.Entities
 {
@@ -11,6 +15,9 @@ namespace StaleContent.Entities
 
         public DateTime Refreshed { get; set; }
         public DateTime FreshnessExpiry { get; set; }
+<<<<<<< HEAD
 
+=======
+>>>>>>> TwentyGotoTen/master
     }
 }
