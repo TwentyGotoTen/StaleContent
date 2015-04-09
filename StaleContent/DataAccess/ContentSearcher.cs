@@ -6,7 +6,10 @@ using Sitecore.ContentSearch.Linq.Utilities;
 using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Data;
 using StaleContent.Entities;
+<<<<<<< HEAD
 using StaleContent.Interfaces;
+=======
+>>>>>>> TwentyGotoTen/master
 
 namespace StaleContent.DataAccess
 {
