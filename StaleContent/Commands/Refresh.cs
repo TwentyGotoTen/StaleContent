@@ -9,7 +9,10 @@ using Sitecore;
 using Sitecore.Web.UI.Sheer;
 using Sitecore.Data.Items;
 using Sitecore.Globalization;
-using StaleContent.Utilities;
+using Sitecore.Pipelines;
+using StaleContent.Pipelines.GetFreshnessPeriod;
+using StaleContent.Pipelines.RefreshItem;
+using StaleContent.Constants;
 
 namespace StaleContent.Commands
 {
@@ -48,16 +51,26 @@ namespace StaleContent.Commands
             if (item == null)
                 return;
 
-            FreshnessUtil.Refresh(item);
+            var refreshArgs = new RefreshItemArgs();
+            refreshArgs.Item = item;
+            CorePipeline.Run(PipelineNames.RefreshItem, refreshArgs);
         } 
 
         private void DisplayPopup(ClientPipelineArgs args)
         {
-            String format = Translate.Text(SettingsUtil.RefreshConfirmationDictionaryKey);
-            String strStaleDate = DateTime.Now.AddDays(SettingsUtil.FreshnessPeriod).ToShortDateString();
+            String format = Translate.Text(DictionaryKeys.RefreshConfirmation);
+            int freshnessPeriod = GetFreshnessPeriod();
+            String strStaleDate = DateTime.Now.AddDays(freshnessPeriod).ToShortDateString();
             String message = String.Format(format, strStaleDate);
             SheerResponse.Confirm(message);
             args.WaitForPostBack();
-        }   
+        }
+
+        private int GetFreshnessPeriod()
+        { 
+            var freshnessPeriodArgs = new GetFreshnessPeriodArgs();
+            CorePipeline.Run(PipelineNames.GetFreshnessPeriod, freshnessPeriodArgs);       
+            return freshnessPeriodArgs.FreshnessPeriod;
+        }
     }
 }

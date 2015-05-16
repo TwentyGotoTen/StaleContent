@@ -6,7 +6,9 @@ namespace StaleContent.Controllers
     [ServicesController]
     public class StaleContentController : EntityService<Entities.StaleContentItem>
     {
-        public StaleContentController(IRepository<Entities.StaleContentItem> repository) : base(repository)
+
+        public StaleContentController(IRepository<Entities.StaleContentItem> repository)
+            : base(repository)
         {
         }
 

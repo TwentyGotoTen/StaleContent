@@ -5,7 +5,7 @@ using System.Web;
 
 namespace StaleContent.Constants
 {
-    public static  class Commands
+    public static  class CommandNames
     {
         public static readonly string Refresh = "stalecontent:refresh";
     }

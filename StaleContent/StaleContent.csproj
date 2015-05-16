@@ -95,35 +95,45 @@
     <Content Include="App_Config\Include\StaleContent.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="JavaScript\StaleContent.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Refresh.cs" />
-    <Compile Include="Constants\Commands.cs" />
-    <Compile Include="Constants\Indexes.cs" />
-    <Compile Include="Constants\StatisticsFields.cs" />
+    <Compile Include="Constants\CommandNames.cs" />
+    <Compile Include="Constants\DatabaseNames.cs" />
+    <Compile Include="Constants\DictionaryKeys.cs" />
+    <Compile Include="Constants\IndexeNames.cs" />
+    <Compile Include="Constants\FieldNames.cs" />
+    <Compile Include="Constants\PipelineNames.cs" />
     <Compile Include="Controllers\StaleContentController.cs" />
     <Compile Include="DataAccess\ContentSearcher.cs" />
     <Compile Include="DataAccess\IContentSearcher.cs" />
     <Compile Include="Entities\SearchItem.cs" />
     <Compile Include="Entities\StaleContentItem.cs" />
     <Compile Include="Gutters\IsStale.cs" />
+    <Compile Include="Pipelines\TemplateCheck\ITemplateList.cs" />
+    <Compile Include="Pipelines\FreshnessCheck\Default.cs" />
+    <Compile Include="Pipelines\FreshnessCheck\FreshnessCheckArgs.cs" />
+    <Compile Include="Pipelines\FreshnessCheck\FreshnessCheckProcessor.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorArgs.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorProcessor.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\Default.cs" />
     <Compile Include="Pipelines\GetContentEditorWarnings\IsStale.cs" />
+    <Compile Include="Pipelines\GetFreshnessPeriod\Default.cs" />
+    <Compile Include="Pipelines\GetFreshnessPeriod\GetFreshnessPeriodArgs.cs" />
+    <Compile Include="Pipelines\GetFreshnessPeriod\GetFreshnessPeriodProcessor.cs" />
     <Compile Include="Pipelines\RefreshItem\DoRefresh.cs" />
-    <Compile Include="Pipelines\RefreshItem\FreshnessPeriod.cs" />
+    <Compile Include="Pipelines\RefreshItem\DefaultFreshnessPeriod.cs" />
     <Compile Include="Pipelines\RefreshItem\RefreshItemArgs.cs" />
     <Compile Include="Pipelines\RefreshItem\RefreshItemProcessor.cs" />
     <Compile Include="Pipelines\RefreshItem\TemplateCheck.cs" />
+    <Compile Include="Pipelines\TemplateCheck\Default.cs" />
+    <Compile Include="Pipelines\TemplateCheck\TemplateCheckArgs.cs" />
+    <Compile Include="Pipelines\TemplateCheck\TemplateCheckProcessor.cs" />
     <Compile Include="Repositories\StaleContentRepository.cs" />
-    <Compile Include="Utilities\ConfigUtil.cs" />
-    <Compile Include="Utilities\FreshnessUtil.cs" />
-    <Compile Include="Utilities\RefreshUtil.cs" />
-    <Compile Include="Utilities\SettingsUtil.cs" />
+    <Compile Include="Pipelines\TemplateCheck\TemplateList.cs" />
     <Compile Include="Pipelines\PublishItem\SetRefreshedDates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\TemplateUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\local.pubxml" />

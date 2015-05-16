@@ -5,8 +5,9 @@ using Sitecore.Diagnostics;
 using Sitecore.Globalization;
 using Sitecore.Pipelines;
 using Sitecore.Shell.Applications.ContentEditor.Gutters;
+using StaleContent.Constants;
 using StaleContent.Pipelines.BuildGutterIconDescriptor;
-using StaleContent.Utilities;
+using StaleContent.Pipelines.FreshnessCheck;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,9 @@ namespace StaleContent.Gutters
         {
             Assert.ArgumentNotNull((object)item, "item");
 
-            if (!FreshnessUtil.IsStale(item))
+            var freshnessCheckArgs = new FreshnessCheckArgs() { Item = item };
+            CorePipeline.Run(PipelineNames.FreshnessCheck, freshnessCheckArgs);
+            if (!freshnessCheckArgs.IsStale)
                 return null;
 
             var descriptor = new GutterIconDescriptor();
@@ -30,7 +33,7 @@ namespace StaleContent.Gutters
                 Descriptor = descriptor
             };
 
-            CorePipeline.Run("staleContent.buildGutterIconDescriptor",args);
+            CorePipeline.Run(PipelineNames.BuildGutterIconDescriptor,args);
             return descriptor;
         }
 

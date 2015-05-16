@@ -7,6 +7,7 @@ using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Data;
 using StaleContent.Entities;
 
+
 namespace StaleContent.DataAccess
 {
     public class ContentSearcher : IContentSearcher

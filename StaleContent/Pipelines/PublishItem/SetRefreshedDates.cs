@@ -3,10 +3,11 @@ using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
+using Sitecore.Pipelines;
 using Sitecore.Publishing;
 using Sitecore.Publishing.Pipelines.PublishItem;
 using StaleContent.Constants;
-using StaleContent.Utilities;
+using StaleContent.Pipelines.RefreshItem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,16 +25,12 @@ namespace StaleContent.Pipelines.PublishItem
                 return;
 
             Item sourceItem = context.PublishHelper.GetSourceItem(context.ItemId);
-            if (sourceItem.Fields[StatisticsFields.Refreshed] == null)
+            if (sourceItem.Fields[FieldNames.Refreshed] == null)
                 return;
 
-            Item targetItem = context.PublishHelper.GetTargetItem(context.ItemId);
-            if (targetItem.Fields[StatisticsFields.Refreshed] == null)
-                return;
-
-            DateTime now = DateTime.Now;
-            FreshnessUtil.Refresh(sourceItem, now);
-            FreshnessUtil.Refresh(targetItem, now);
+            var args = new RefreshItemArgs();
+            args.Item = sourceItem;
+            CorePipeline.Run(PipelineNames.RefreshItem, args);
         }
 
 

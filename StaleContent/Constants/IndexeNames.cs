@@ -5,7 +5,7 @@ using System.Web;
 
 namespace StaleContent.Constants
 {
-    public class Indexes
+    public class IndexeNames
     {
         public static readonly string Master = "sitecore_master_index";
     }
