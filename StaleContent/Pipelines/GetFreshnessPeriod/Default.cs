@@ -10,7 +10,7 @@ namespace StaleContent.Pipelines.GetFreshnessPeriod
     {
         public int DefaultFreshnessPeriod { get; set; }
 
-        public override void Process(GetFreshnessPeriodArgs args)
+        public override void Process(GetFreshnessPeriodArgs args) 
         {
             Assert.ArgumentNotNull(args, "args");
             args.FreshnessPeriod = DefaultFreshnessPeriod;

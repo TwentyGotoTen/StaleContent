@@ -17,7 +17,7 @@ namespace StaleContent.Pipelines.GetContentEditorWarnings
     public class IsStale 
     {
         public string TitleKey { get; set; }
-        public string TextKey { get; set; }
+        public string TextKey { get; set; } 
         public string OptionKey { get; set; }
         public string IconPath { get; set; }
 

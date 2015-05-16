@@ -11,6 +11,6 @@ namespace StaleContent.Pipelines.BuildGutterIconDescriptor
     public class BuildGutterIconDescriptorArgs: PipelineArgs
     {
         public GutterIconDescriptor Descriptor { get; set; }
-        public Item Item { get; set; }
+        public Item Item { get; set; } 
     }
 }

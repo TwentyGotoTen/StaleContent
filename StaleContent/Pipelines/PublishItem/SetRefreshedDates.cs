@@ -17,7 +17,7 @@ namespace StaleContent.Pipelines.PublishItem
 {
     public class SetRefreshedDates : PublishItemProcessor
     {
-        public override void Process(PublishItemContext context)
+        public override void Process(PublishItemContext context) 
         {
             Assert.ArgumentNotNull(context, "context");
 

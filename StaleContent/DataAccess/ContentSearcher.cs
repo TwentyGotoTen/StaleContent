@@ -22,7 +22,7 @@ namespace StaleContent.DataAccess
 
                 var results = filterExpression != null ? query.Where(filterExpression).ToList() : query.ToList();
 
-                return results;
+                return results; 
             }
         }
 

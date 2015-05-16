@@ -9,7 +9,7 @@ using System.Web;
 
 namespace StaleContent.Pipelines.BuildGutterIconDescriptor
 {
-    public class Default : BuildGutterIconDescriptorProcessor
+    public class Default : BuildGutterIconDescriptorProcessor 
     {
         public string IconPath { get; set; }
         public string TooltipKey { get; set; }

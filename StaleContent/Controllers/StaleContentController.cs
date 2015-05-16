@@ -14,6 +14,7 @@ namespace StaleContent.Controllers
 
         //public StaleContentController() : this(Container.GetInstance<IRepository<Entities.StaleContentItem>>())
         //{
+
         //}
     }
 }

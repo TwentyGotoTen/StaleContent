@@ -19,7 +19,7 @@ namespace StaleContent.Pipelines.FreshnessCheck
             DateTime freshnessExpiry = DateUtil.IsoDateToDateTime(field.Value);
             if (freshnessExpiry.Date <= DateTime.Now.Date)
             {
-                args.IsStale = true;
+                args.IsStale = true; 
                 args.AbortPipeline();
             }
         }

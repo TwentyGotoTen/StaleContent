@@ -31,7 +31,7 @@ namespace StaleContent.Gutters
             { 
                 Item = item,
                 Descriptor = descriptor
-            };
+            }; 
 
             CorePipeline.Run(PipelineNames.BuildGutterIconDescriptor,args);
             return descriptor;

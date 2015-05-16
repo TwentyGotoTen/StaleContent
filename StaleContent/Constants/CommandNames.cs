@@ -7,6 +7,6 @@ namespace StaleContent.Constants
 {
     public static  class CommandNames
     {
-        public static readonly string Refresh = "stalecontent:refresh";
+        public static readonly string Refresh = "stalecontent:refresh"; 
     }
 }

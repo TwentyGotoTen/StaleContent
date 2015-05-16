@@ -10,6 +10,6 @@ namespace StaleContent.Pipelines.RefreshItem
     public class RefreshItemArgs : PipelineArgs
     {
         public Item Item { get; set; }
-        public int FreshnessPeriod { get; set; }
+        public int FreshnessPeriod { get; set; } 
     }
 }

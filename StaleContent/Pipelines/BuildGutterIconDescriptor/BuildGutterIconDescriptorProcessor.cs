@@ -7,6 +7,6 @@ namespace StaleContent.Pipelines.BuildGutterIconDescriptor
 {
     public abstract class BuildGutterIconDescriptorProcessor 
     {
-        public abstract void Process(BuildGutterIconDescriptorArgs args);
+        public abstract void Process(BuildGutterIconDescriptorArgs args); 
     }
 }

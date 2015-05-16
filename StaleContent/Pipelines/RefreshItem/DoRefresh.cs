@@ -14,7 +14,7 @@ namespace StaleContent.Pipelines.RefreshItem
         public override void Process(RefreshItemArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            Assert.IsNotNull(args.Item, "args.Item");
+            Assert.IsNotNull(args.Item, "args.Item"); 
 
             if (args.FreshnessPeriod <= 0)
                 return;

@@ -10,6 +10,6 @@ namespace StaleContent.DataAccess
     {
         List<T> GetItemsByTemplate<T>(string indexName, string templateName, Expression<Func<T, bool>> filterExpression = null) where T : SearchResultItem;
         List<T> GetItems<T>(string indexName, Expression<Func<T, bool>> filterExpression = null) where T : SearchResultItem;
-        Expression<Func<SearchItem, bool>> CreateExpiryPredicate();
+        Expression<Func<SearchItem, bool>> CreateExpiryPredicate(); 
     }
 }

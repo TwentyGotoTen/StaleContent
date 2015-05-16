@@ -14,7 +14,7 @@ using StaleContent.Pipelines.GetFreshnessPeriod;
 using StaleContent.Pipelines.RefreshItem;
 using StaleContent.Constants;
 
-namespace StaleContent.Commands
+namespace StaleContent.Commands 
 {
     public class Refresh : Command
     {

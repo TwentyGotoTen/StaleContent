@@ -10,5 +10,6 @@ namespace StaleContent.Entities
 
         [IndexField("__freshness_expiry")]
         public DateTime FreshnessExpiry { get; set; }
+
     }
 }

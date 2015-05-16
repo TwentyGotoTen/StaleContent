@@ -9,5 +9,6 @@ namespace StaleContent.Entities
 
         public DateTime Refreshed { get; set; }
         public DateTime FreshnessExpiry { get; set; }
+
     }
 }

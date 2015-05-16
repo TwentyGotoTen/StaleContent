@@ -28,7 +28,7 @@ namespace StaleContent.Repositories
 
         public Entities.StaleContentItem FindById(string id)
         {
-            throw new System.NotImplementedException();
+            throw new System.NotImplementedException(); 
         }
 
         public void Add(Entities.StaleContentItem entity)

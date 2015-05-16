@@ -19,7 +19,7 @@ namespace StaleContent.Pipelines.RefreshItem
             templateCheckArgs.ItemToCheck = args.Item;
             CorePipeline.Run(PipelineNames.TemplateCheck, templateCheckArgs);
 
-            if (!templateCheckArgs.TemplateIsValid)
+            if (!templateCheckArgs.TemplateIsValid) 
                 args.AbortPipeline();
         }
     }
