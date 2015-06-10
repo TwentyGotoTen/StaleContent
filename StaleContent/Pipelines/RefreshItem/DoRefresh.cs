@@ -16,7 +16,11 @@ namespace StaleContent.Pipelines.RefreshItem
         {
             Assert.ArgumentNotNull(args, "args");
             Assert.IsNotNull(args.Item, "args.Item");
+<<<<<<< HEAD
             RefreshUtil.RefreshItem(args.FreshnessPeriod, args.Item);
+=======
+            RefreshUtil.RefreshItem(args.FreshnessPeriod,args.Item);
+>>>>>>> TwentyGotoTen/master
         }
     }
 }

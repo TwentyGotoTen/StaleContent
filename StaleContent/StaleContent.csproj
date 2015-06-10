@@ -88,6 +88,42 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      </Reference>
+    <Reference Include="Sitecore.Client, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Lucene">
+      <HintPath>..\Lib\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Client">
+      <HintPath>..\Lib\Sitecore.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Core">
+      <HintPath>..\Lib\Sitecore.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Infrastructure">
+      <HintPath>..\Lib\Sitecore.Services.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+     </Reference>
+    <Reference Include="Sitecore.Services.Infrastructure.Sitecore">
+      <HintPath>..\Lib\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -121,6 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Refresh.cs" />
+    <Compile Include="Constants\Commands.cs" />
+    <Compile Include="Constants\Indexes.cs" />
     <Compile Include="Constants\StatisticsFields.cs" />
     <Compile Include="Controllers\StaleContentController.cs" />
     <Compile Include="DataAccess\ContentSearcher.cs" />
@@ -134,16 +172,21 @@
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorArgs.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\BuildGutterIconDescriptorProcessor.cs" />
     <Compile Include="Pipelines\BuildGutterIconDescriptor\Default.cs" />
+    <Compile Include="Pipelines\GetContentEditorWarnings\IsStale.cs" />
     <Compile Include="Pipelines\RefreshItem\DoRefresh.cs" />
     <Compile Include="Pipelines\RefreshItem\FreshnessPeriod.cs" />
     <Compile Include="Pipelines\RefreshItem\RefreshItemArgs.cs" />
     <Compile Include="Pipelines\RefreshItem\RefreshItemProcessor.cs" />
     <Compile Include="Pipelines\RefreshItem\TemplateCheck.cs" />
     <Compile Include="Repositories\StaleContentRepository.cs" />
+    <Compile Include="Repositories\StaleContentRepository.cs" />
+    <Compile Include="Utilities\ConfigUtil.cs" />
     <Compile Include="Utilities\FreshnessUtil.cs" />
+    <Compile Include="Utilities\RefreshUtil.cs" />
     <Compile Include="Utilities\SettingsUtil.cs" />
     <Compile Include="Pipelines\PublishItem\SetRefreshedDates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\TemplateUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="JavaScript\StaleContent.js" />
